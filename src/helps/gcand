@@ -1,0 +1,3 @@
+Quckly add staged changes to the last comit without editing the commit message.
+
+gcand is alias for git commit --amend --no-edit

@@ -1,0 +1,3 @@
+Halt the virtual machine and exit command the prompt
+
+vhx is alias for vagrant halt && exit

@@ -1,0 +1,37 @@
+All docker compose aliases start with 'dc' followed by a letter for subcommand:
+
+	(e) - docker-compose e)xec	dce
+	(l) - docker-compose l)ogs	dcl
+	(r) - docker-compose r)un	dcr
+	(u) - docker-compose u)p	dcu
+
+For information about aliases for docker try
+$ cahelp docker
+
+Under windows bash emulators winpty may be required in some cases.
+For this purpose if winpty is available on the system docker compose aliases
+will have winpty included in them.
+
+For more information about each alias use
+$ cahelp ALIAS
+
+Available aliases for docker are:
+	Compose:
+		dc		Alias for docker-compose
+
+	Exec:
+		dce		Alias for docker-compose exec
+
+	Logs:
+		dcl		Alias for docker-compose logs
+		dclf		Alias for docker-compose logs -f
+
+	Run:
+		dcr		Alias for docker-compose run
+
+	Up:
+		dcu		Alias for docker-compose up
+		dcud		Alias for docker-compose up -d
+
+	Other actions:
+		dcbash		Start bash session for a service

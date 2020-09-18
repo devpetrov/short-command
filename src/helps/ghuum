@@ -1,0 +1,3 @@
+ghuum is alias for git stash push -u -m
+
+Usage: ghuum "My stash message"

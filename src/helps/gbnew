@@ -1,0 +1,16 @@
+Create branch from latest remote state of origin master and check it out.
+
+gbnew [branch_name]
+
+	branche_name	Can be copy/pasted from a issue tracker, e.g. JIRA.
+			New lines, spaces and other illegal characters 
+			will be replaced with a dash (-). 
+			First word is left as is the rest are converted
+			to lowercase.
+
+E.g. (note the quote marks for multiline argument)
+
+gbnew "JIRA-1234 Fix this and
+that"
+
+will create a branch named JIRA-1234-fix-this-and-that

@@ -1,0 +1,1 @@
+alias dl='docker logs'

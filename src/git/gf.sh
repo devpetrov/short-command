@@ -1,0 +1,1 @@
+alias gf='git config'

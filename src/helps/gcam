@@ -1,0 +1,3 @@
+gcam is alias for git commit -a -m
+
+Usage: gcam "My commit message"
