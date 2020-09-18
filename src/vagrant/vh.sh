@@ -1,0 +1,1 @@
+alias vh='vagrant halt'

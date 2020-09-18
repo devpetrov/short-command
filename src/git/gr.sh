@@ -1,0 +1,1 @@
+alias gr='git rebase'

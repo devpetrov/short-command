@@ -1,0 +1,7 @@
+List and prompt for removing of all branches
+that are already merged into origin/master.
+
+Requires clean working tree.
+The command will prompt you 
+to clear the working tree by itself
+using git reset --hard

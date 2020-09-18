@@ -1,0 +1,3 @@
+Show one line logs of last ten commits
+
+gg is alias of git log --oneline -n10

@@ -1,0 +1,23 @@
+All docker aliases start with 'd' followed by a letter for subcommand:
+
+	(l) - docker logs
+
+In this sequence 'c' is reserved for docker compose aliases (dc)
+
+Under windows bash emulators winpty may be required in some cases.
+For this purpose if winpty is available on the system docker compose aliases
+will have winpty included in them.
+
+For information about aliases for docker-compose try
+$ cahelp docker-compose
+
+For more information about each alias use
+$ cahelp ALIAS
+
+Available aliases for docker are:
+	Docker:
+		d	Alias for docker
+
+	Logs:
+		dl	Alias for docker logs
+		dlf	Alias for docker logs -f

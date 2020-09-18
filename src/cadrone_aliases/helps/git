@@ -1,0 +1,84 @@
+All git aliases start with 'g' followed by a letter for subcommand:
+	
+	(a) - git a)dd		ga
+	(b) - git b)ranch	gb
+	(c) - git c)ommit	gc
+	(e) - git r(e)set	ge
+	(f) - git con(f)ig	gf
+	(g) - git lo(g)		gg
+	(h) - git stas(h)	gh
+	(k) - git chec(k)out	gk
+	(l) - git pu(l)l	gl
+	(r) - git r)ebase	gr
+	(s) - git pu(s)h	gs
+	(t) - git s(t)atus	gt
+
+For more information about each alias use
+$ cahelp ALIAS
+
+Available aliases for git are:
+	Adding files:
+		ga		Alias of git add
+
+	Branches:
+		gb		Show list of branches. Alias of git branch
+		gbnew		Create new branch from the latest state of main branch
+		gdebranch	Remove obsolete branches
+
+	Checkout:
+		gk		Alias for git checkout
+		gkb		Alias for git checkout -b
+		gkd		Alias for git checkout --
+
+	Commits:
+		gc		Alias of git commit
+		gca		Create commit with all changed files. Enter message interactively.
+				Alias of git commit -a
+		gcam		Create commit with all changed files. Enter message inline.
+				Alias if git commit -a -m
+		gcand		Quckly add staged changes to the last comit
+				without editing the commit message.
+		gcd		Ammend commit. Alias of git commit --ammend
+		gcm		Create commit with staged changes and enter inline message.
+				Alias of git commit -m
+		
+	Config:
+		gf		Alias of git config
+		gfg		Alias of git config --global
+
+	Log:
+		gg		Show one line logs for the last 10 commits of the current branch
+
+	Pull:
+		gl		Alias for git pull
+	
+	Push:
+		gs		Alias for git push
+		gsu		Push active branch and create upstream for it.
+	
+	Rebase
+		gr		Alias for git rebase
+		gra		Alias for git rebase --abort
+		grc		Alias for git rebase --continue
+		gri		Alias for git rebase -i
+		grs		Alias for git rebase --skip
+
+	Reset
+		geh		Reset commits. Alias of git reset HEAD~1
+				Usefull for continuing work from WIP commit.
+
+	Stash:
+		gh		Show list of stashes. Alias if git stash list
+		gha		Apply a stash. Alias of git stash apply            
+		ghd		Drop stash. Alias for git stash drop
+		gho		Pop stash. Alias for git stash pop
+		ghu		Push stash. Alias for git stash push
+		ghum		Push stash with message. Alias for git stash push -m
+		ghuu		Push stash including untracked files. Alias fir git stash push -u
+		ghuum		Push stash with message including untracked files. Alias fir git stash push -u -m
+
+	Status:
+		gt		Alias for git Status
+	
+	Other actions:
+		gsweep		Hard reset all changes and remove untrecked files.

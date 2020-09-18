@@ -1,0 +1,7 @@
+Following navigation aliases are available:
+
+	..	One directory up
+		alias for cd ..
+
+	...	Two directories up
+		alias for cd ../..

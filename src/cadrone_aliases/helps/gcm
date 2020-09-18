@@ -1,0 +1,3 @@
+gcm is alias for git commit -m
+
+Usage: gcm "My commit message"

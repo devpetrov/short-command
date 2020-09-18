@@ -1,0 +1,4 @@
+d is alias for docker
+
+For more information about docker aliases try
+$ cahelp docker
