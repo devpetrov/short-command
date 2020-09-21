@@ -1,4 +1,4 @@
-CAVERSION='0.19.0'
+CAVERSION='0.20.0'
 
 caversion () {
 	echo "Cadrone Aliases Version $CAVERSION"
