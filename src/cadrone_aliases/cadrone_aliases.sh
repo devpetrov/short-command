@@ -57,5 +57,5 @@ caupdate () {
         return 1
     fi
 
-    echo "Congratulations! You now have latest version $LATEST_VERSION of Cadrone Aliases installed."
+    echo "Congratulations! You now have the latest version $LATEST_VERSION of Cadrone Aliases installed."
 }
