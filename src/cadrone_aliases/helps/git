@@ -64,6 +64,7 @@ Available aliases for git are:
 		grs		Alias for git rebase --skip
 
 	Reset
+		ge		Alias for git reset
 		geh		Reset commits. Alias of git reset HEAD~1
 				Usefull for continuing work from WIP commit.
 
