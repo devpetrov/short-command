@@ -11,3 +11,5 @@ else
         winpty docker-compose exec $1 bash
     }
 fi
+
+_catool_docker_completion_wrapper _docker_compose_exec dcbash
