@@ -1,0 +1,1 @@
+alias dcps="docker-compose ps"

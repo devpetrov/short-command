@@ -29,6 +29,9 @@ Available aliases for docker are:
 	Run:
 		dcr		Alias for docker-compose run
 
+	PS:
+		dcps		Alias for docker-compose ps
+
 	Up:
 		dcu		Alias for docker-compose up
 		dcud		Alias for docker-compose up -d
