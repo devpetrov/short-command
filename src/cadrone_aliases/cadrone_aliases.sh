@@ -5,7 +5,7 @@ caversion () {
 }
 
 caupdate () {
-    local LATEST_VERSION_DATA="$(wget --no-cache -qO- https://aliases.pavelpetrov.space/latest)"
+    local LATEST_VERSION_DATA="$(curl -s -H 'Cache-Control: no-cache' https://aliases.pavelpetrov.space/latest)"
 
     if [ 0 -lt "$?" ]; then
         echo "Error: Version check failed."
@@ -22,7 +22,7 @@ caupdate () {
     local DOWNLOAD_URL=$(echo $LATEST_VERSION_DATA | cut -d ' ' -f2)
     local DOWNLOAD_PATH="$TMPDIR/$(basename -- $DOWNLOAD_URL)"
 
-    wget --no-cache -q -O $DOWNLOAD_PATH $DOWNLOAD_URL
+    curl -s -H 'Cache-Control: no-cache' $DOWNLOAD_URL --output $DOWNLOAD_PATH
 
     if [ 0 -lt "$?" ]; then
         echo "Error: Failed to download latest version."
