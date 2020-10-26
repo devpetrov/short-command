@@ -41,6 +41,17 @@ caupdate () {
         return 1
     fi
 
+    (
+        cd "$(dirname $DOWNLOAD_PATH)"
+        echo "$LATEST_VERSION_DATA" | cut -d ' ' -f3,4 | shasum -a384 --check --status
+    )
+
+    if [ 0 -ne "$?" ]; then
+        echo "Error: Installation file is corrupted."
+        rm $DOWNLOAD_PATH
+        return 1
+    fi
+
     tar -x -f $DOWNLOAD_PATH -C $INSTALLATION_PATH
 
     if [ 0 -lt "$?" ]; then
