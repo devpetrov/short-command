@@ -1,5 +1,3 @@
-IS_WINPTY=$(type -t winpty)
-
 if [ -z $IS_WINPTY ]; then
     alias dce='docker-compose exec'
 else
