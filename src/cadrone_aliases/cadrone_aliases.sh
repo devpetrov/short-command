@@ -5,7 +5,7 @@ caversion () {
 }
 
 caupdate () {
-    local LATEST_VERSION_DATA="$(curl -s -H 'Cache-Control: no-cache' https://aliases.pavelpetrov.space/latest)"
+    local LATEST_VERSION_DATA="$(curl -s -H 'Cache-Control: no-cache' ___LATEST_VERSION_DATA_URL___)"
 
     if [ 0 -lt "$?" ]; then
         echo "Error: Version check failed."
