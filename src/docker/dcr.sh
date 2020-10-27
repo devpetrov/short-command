@@ -1,4 +1,4 @@
-if [ -z $IS_WINPTY ]; then
+if [ -z $_CATOOL_IS_WINPTY ]; then
     alias dcr='docker-compose run'
 else
     alias dcr='winpty docker-compose run'

@@ -1,4 +1,4 @@
-if [ -z $IS_WINPTY ]; then
+if [ -z $_CATOOL_IS_WINPTY ]; then
     dcbash() {
         : ${1:?"Provide service name"}
         docker-compose exec $1 bash
