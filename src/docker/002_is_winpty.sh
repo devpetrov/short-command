@@ -1,1 +1,1 @@
-IS_WINPTY=$(type -t winpty)
+_CATOOL_IS_WINPTY=$(type -t winpty)
