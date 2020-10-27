@@ -1,0 +1,1 @@
+IS_WINPTY=$(type -t winpty)
