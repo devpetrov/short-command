@@ -1,7 +1,26 @@
-CAVERSION='0.22.0'
+caabout () {
+    local VERSION='0.22.0'
 
-caversion () {
-	echo "Cadrone Aliases Version $CAVERSION"
+    if [ -z "$1" ]; then 
+        cat <<EOF 
+Use ${FUNCNAME[0]} -v to print only the version number.
+
+Cadrone aliases version $VERSION.
+https://aliases.pavelpetrov.space
+Licensed under LICENSE <link to license>
+
+Author: Pavel Petrov (https://pavelpetrov.space)
+and contributors (<link to list of contributors>).
+
+Source code: <link to github>
+EOF
+        return
+    fi
+
+    if [ "-v" = "$1" ]; then
+        printf "$VERSION"
+        return 
+    fi
 }
 
 caupdate () {
@@ -14,7 +33,7 @@ caupdate () {
 
     local LATEST_VERSION=$(echo $LATEST_VERSION_DATA | cut -d ' ' -f1)
 
-    if [[ $LATEST_VERSION = $CAVERSION ]]; then
+    if [[ $LATEST_VERSION = $(caabout -v) ]]; then
         echo "You already have the latest version $LATEST_VERSION."
         return 2
     fi
