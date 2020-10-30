@@ -1,6 +1,6 @@
 shoco () (
 
-    local VERSION='0.22.0'
+    local VERSION='0.23.0'
 
 	_about() {
 		cat <<EOF 
