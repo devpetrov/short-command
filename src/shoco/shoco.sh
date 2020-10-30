@@ -106,7 +106,7 @@ EOF
 
     if [ "-a" = "$1" ]; then
         _about
-    elif [ "-h " ]; then
+    elif [ "-h" = "$1" ]; then
         _help "$2"
     elif [ "-v" = "$1" ]; then
         printf "$VERSION"
