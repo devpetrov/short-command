@@ -1,4 +1,4 @@
 dc is alias for docker-compose
 
 For more information about docker-compose aliases try
-$ cahelp docker-compose
+$ shoco -h docker-compose

@@ -6,14 +6,14 @@ All docker compose aliases start with 'dc' followed by a letter for subcommand:
 	(u) - docker-compose u)p	dcu
 
 For information about aliases for docker try
-$ cahelp docker
+$ shoco -h docker
 
 Under windows bash emulators winpty may be required in some cases.
 For this purpose if winpty is available on the system docker compose aliases
 will have winpty included in them.
 
 For more information about each alias use
-$ cahelp ALIAS
+$ shoco -h ALIAS
 
 Available aliases for docker are:
 	Compose:

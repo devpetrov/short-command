@@ -1,3 +1,3 @@
 alias ga='git add'
 
-_catool_git_shortcut ga add
+_shoco_git_shortcut ga add

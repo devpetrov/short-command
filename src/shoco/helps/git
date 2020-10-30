@@ -14,7 +14,7 @@ All git aliases start with 'g' followed by a letter for subcommand:
 	(t) - git s(t)atus	gt
 
 For more information about each alias use
-$ cahelp ALIAS
+$ shoco -h ALIAS
 
 Available aliases for git are:
 	Adding files:

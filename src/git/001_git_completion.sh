@@ -1,4 +1,4 @@
-_catool_define_git_completion () {
+_shoco_define_git_completion () {
 eval "
     _git_$2_shortcut () {
         COMP_LINE=\"git $2\${COMP_LINE#$1}\"
@@ -12,7 +12,7 @@ eval "
 "
 }
 
-_catool_git_shortcut () {
-    type _git_$2_shortcut &>/dev/null || _catool_define_git_completion $1 $2
+_shoco_git_shortcut () {
+    type _git_$2_shortcut &>/dev/null || _shoco_define_git_completion $1 $2
     complete -o default -o nospace -F _git_$2_shortcut $1
 }
