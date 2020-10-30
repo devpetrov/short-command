@@ -9,10 +9,10 @@ For this purpose if winpty is available on the system docker compose aliases
 will have winpty included in them.
 
 For information about aliases for docker-compose try
-$ cahelp docker-compose
+$ shoco -h docker-compose
 
 For more information about each alias use
-$ cahelp ALIAS
+$ shoco -h ALIAS
 
 Available aliases for docker are:
 	Docker:

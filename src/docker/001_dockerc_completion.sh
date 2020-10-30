@@ -1,4 +1,4 @@
-_catool_docker_completion_wrapper () {
+_shoco_docker_completion_wrapper () {
     if [ 1 -eq $(declare -f _docker_compose > /dev/null ; echo $?) ]; then
         return 1
     fi

@@ -1,4 +1,4 @@
-if [ -z $_CATOOL_IS_WINPTY ]; then
+if [ -z $_SHOCO_IS_WINPTY ]; then
     dcbash() {
         : ${1:?"Provide service name"}
         docker-compose exec $1 bash
@@ -10,4 +10,4 @@ else
     }
 fi
 
-_catool_docker_completion_wrapper _docker_compose_exec dcbash
+_shoco_docker_completion_wrapper _docker_compose_exec dcbash

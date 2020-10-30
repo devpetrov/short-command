@@ -1,0 +1,29 @@
+Usage: shoco FLAG
+		shoco -h [ALIAS|COMMAND]
+
+Flags:
+
+	-a	Display information about Shoco
+
+	-v	Display only version number
+
+	-u	Update Shoco
+
+	-h --help [ALIAS|COMMAND]
+		If no argument provided this will display current help message.
+		If argument is provided it will display help information
+			about the tha ALIAS or the available aliases for COMMAND.
+
+			Aliases for the following commands are available
+
+				git
+				docker
+				docker-compose
+				vagrant
+
+				navigation
+
+			For list of aliases for each command use
+				shoco -h COMMAND
+
+			E.g.: shoco -h git
