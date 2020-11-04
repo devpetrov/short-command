@@ -1,33 +1,47 @@
 shoco () (
 
-    local VERSION='0.23.1'
+    local VERSION='0.22.1'
 
     local LATEST_VERSION_DATA='';
 
     _shoco_get_latest_version() {
-        echo "$(curl -s -H 'Cache-Control: no-cache' ___LATEST_VERSION_DATA_URL___)"
+        LATEST_VERSION_DATA="$(curl -s --fail -H 'Cache-Control: no-cache' ___LATEST_VERSION_DATA_URL___)"
+
+        if [ 0 -lt "$?" ]; then
+            echo "Error: Version check failed."
+            return 1
+        fi
     }
 
     _shoco_parse_version() {
         if [ -z "$LATEST_VERSION_DATA" ]; then
-            LATEST_VERSION_DATA="$(_shoco_get_latest_version)"
+            _shoco_get_latest_version || return 1
         fi
 
         local OPTIND
         while getopts "suv" OPTION; do
             case "$OPTION" in
-                'v') echo "${LATEST_VERSION_DATA}" | cut -d ' ' -f1;;
+                v) echo "${LATEST_VERSION_DATA}" | cut -d ' ' -f1;;
+                u) echo "${LATEST_VERSION_DATA}" | cut -d ' ' -f2;;
+                s) echo "${LATEST_VERSION_DATA}" | cut -d ' ' -f3,4;;
             esac
         done
     }
 
 	_about() {
-        local LATEST_VERSION="$(_shoco_parse_version -v)"
         local VERSION_LINE="Version: ${VERSION}."
-        if [[ $LATEST_VERSION != $VERSION ]]; then
-            VERSION_LINE+="\nNew version ${LATEST_VERSION} is available. Use shoco -u to update."
+
+        local LATEST_VERSION
+        LATEST_VERSION="$(_shoco_parse_version -v)"
+
+        if [ 0 -eq "$?" ]; then 
+            if [[ $LATEST_VERSION != $VERSION ]]; then
+                VERSION_LINE+="\nNew version ${LATEST_VERSION} is available. Use shoco -u to update."
+            else
+                VERSION_LINE+="\nYou are running the latest version of Shoco."
+            fi
         else
-            VERSION_LINE+="\nYou are running the latest version of Shoco."
+            VERSION_LINE+="\n[Cannot retreive update information. Try again later.]"
         fi
 
 		printf "Shoco - Short Command tool.
@@ -44,21 +58,18 @@ Source code: <link to github>"
 	}
 
 	_update() {
-		local LATEST_VERSION_DATA="$(curl -s -H 'Cache-Control: no-cache' ___LATEST_VERSION_DATA_URL___)"
+        _shoco_get_latest_version || return 1
 
-        if [ 0 -lt "$?" ]; then
-            echo "Error: Version check failed."
-            return 1
-        fi
-
-        local LATEST_VERSION=$(echo $LATEST_VERSION_DATA | cut -d ' ' -f1)
+        local LATEST_VERSION=$(_shoco_parse_version -v)
 
         if [[ $LATEST_VERSION = $VERSION ]]; then
             echo "You already have the latest version $LATEST_VERSION."
             return 0
         fi
 
-        local DOWNLOAD_URL=$(echo $LATEST_VERSION_DATA | cut -d ' ' -f2)
+        echo "New version ${LATEST_VERSION} is available. Processing.."
+
+        local DOWNLOAD_URL=$(_shoco_parse_version -u)
         local DOWNLOAD_PATH="$TMPDIR/$(basename -- $DOWNLOAD_URL)"
 
         curl -s -H 'Cache-Control: no-cache' $DOWNLOAD_URL --output $DOWNLOAD_PATH
@@ -79,7 +90,7 @@ Source code: <link to github>"
 
         (
             cd "$(dirname $DOWNLOAD_PATH)"
-            echo "$LATEST_VERSION_DATA" | cut -d ' ' -f3,4 | shasum -a384 --check --status
+            _shoco_parse_version -s | shasum -a384 --check --status
         )
 
         if [ 0 -ne "$?" ]; then
