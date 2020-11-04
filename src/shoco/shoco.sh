@@ -1,6 +1,6 @@
 shoco () (
 
-    local VERSION='0.22.1'
+    local VERSION='0.23.1'
 
     local LATEST_VERSION_DATA='';
 
@@ -44,7 +44,7 @@ shoco () (
             VERSION_LINE+="\n[Cannot retreive update information. Try again later.]"
         fi
 
-		printf "Shoco - Short Command tool.
+		printf "Short Command (Shoco)
 
 $VERSION_LINE
 
@@ -52,7 +52,6 @@ https://aliases.pavelpetrov.space
 Released under MIT License. Type shoco -h license for more information.
 
 Author: Pavel Petrov (https://pavelpetrov.space)
-and contributors (<link to list of contributors>).
 
 Source code available at: https://github.com/chaos-drone/short-command"
 	}
