@@ -27,7 +27,7 @@ EOF
 
         if [[ $LATEST_VERSION = $VERSION ]]; then
             echo "You already have the latest version $LATEST_VERSION."
-            return 2
+            return 0
         fi
 
         local DOWNLOAD_URL=$(echo $LATEST_VERSION_DATA | cut -d ' ' -f2)
