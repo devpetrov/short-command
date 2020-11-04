@@ -1,0 +1,1 @@
+alias shoh='shoco -h'
