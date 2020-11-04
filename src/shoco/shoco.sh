@@ -90,10 +90,7 @@ EOF
             return 1
         fi
 
-        # B_=$(tput bold)
-        # _B=$(tput sgr0)
-
-        CONTENT=$(cat $HELP_ITEM | sed 's/^/    /')
+        CONTENT=$(cat $HELP_ITEM)
         CONTENT_LINES=$(echo "$CONTENT" | wc -l)
         WINDOW_LINES=$(tput lines)
 
