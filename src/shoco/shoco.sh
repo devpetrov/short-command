@@ -49,7 +49,7 @@ shoco () (
 $VERSION_LINE
 
 https://aliases.pavelpetrov.space
-Licensed under <license> <link to license>
+Released under MIT License. Type shoco -h license for more information.
 
 Author: Pavel Petrov (https://pavelpetrov.space)
 and contributors (<link to list of contributors>).
