@@ -1,5 +1,6 @@
-Usage: shoco FLAG
-		shoco -h [ALIAS|COMMAND]
+Usage: 	shoco FLAG
+	shoco -h [ALIAS|COMMAND]
+	shoh [ALIAS|COMMAND]
 
 Flags:
 
@@ -10,6 +11,7 @@ Flags:
 	-u	Update Shoco
 
 	-h --help [ALIAS|COMMAND]
+		You can use shoh instead of shoco -h
 		If no argument provided this will display current help message.
 		If argument is provided it will display help information
 			about the tha ALIAS or the available aliases for COMMAND.
