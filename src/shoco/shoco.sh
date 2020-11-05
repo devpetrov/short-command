@@ -28,7 +28,7 @@ shoco () (
         done
     }
 
-	_about() {
+	_shoco_about() {
         local VERSION_LINE="Version: ${VERSION}."
 
         local LATEST_VERSION
@@ -57,7 +57,7 @@ and contributors (<link to list of contributors>).
 Source code: <link to github>"
 	}
 
-	_update() {
+	_shoco_update() {
         _shoco_get_latest_version || return 1
 
         local LATEST_VERSION=$(_shoco_parse_version -v)
@@ -118,7 +118,7 @@ Source code: <link to github>"
         echo "Congratulations! Shoco updated to the latest version $LATEST_VERSION."
 	}
 
-    _help() {
+    _shoco_help() {
         ABOUT="${1:-shoco}"
 
         DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
@@ -141,14 +141,14 @@ Source code: <link to github>"
     }
 
     if [ "-a" = "$1" ]; then
-        _about
+        _shoco_about
     elif [ "-h" = "$1" ]; then
-        _help "$2"
+        _shoco_help "$2"
     elif [ "-v" = "$1" ]; then
         printf "$VERSION"
     elif [ "-u" = "$1" ]; then
-        _update
+        _shoco_update
     else
-        _help "$2"
+        _shoco_help "$2"
     fi
 )
