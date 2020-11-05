@@ -22,16 +22,25 @@ shoco () (
     }
 
 	_about() {
-		cat <<EOF 
-Shoco version $VERSION.
+        local LATEST_VERSION="$(_shoco_parse_version -v)"
+        local VERSION_LINE="Version: ${VERSION}."
+        if [[ $LATEST_VERSION != $VERSION ]]; then
+            VERSION_LINE+="\nNew version ${LATEST_VERSION} is available. Use shoco -u to update."
+        else
+            VERSION_LINE+="\nYou are running the latest version of Shoco."
+        fi
+
+		printf "Shoco - Short Command tool.
+
+$VERSION_LINE
+
 https://aliases.pavelpetrov.space
 Licensed under <license> <link to license>
 
 Author: Pavel Petrov (https://pavelpetrov.space)
 and contributors (<link to list of contributors>).
 
-Source code: <link to github>
-EOF
+Source code: <link to github>"
 	}
 
 	_update() {
