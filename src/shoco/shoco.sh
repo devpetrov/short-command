@@ -2,6 +2,25 @@ shoco () (
 
     local VERSION='0.23.1'
 
+    local LATEST_VERSION_DATA='';
+
+    _shoco_get_latest_version() {
+        echo "$(curl -s -H 'Cache-Control: no-cache' ___LATEST_VERSION_DATA_URL___)"
+    }
+
+    _shoco_parse_version() {
+        if [ -z "$LATEST_VERSION_DATA" ]; then
+            LATEST_VERSION_DATA="$(_shoco_get_latest_version)"
+        fi
+
+        local OPTIND
+        while getopts "suv" OPTION; do
+            case "$OPTION" in
+                'v') echo "${LATEST_VERSION_DATA}" | cut -d ' ' -f1;;
+            esac
+        done
+    }
+
 	_about() {
 		cat <<EOF 
 Shoco version $VERSION.
