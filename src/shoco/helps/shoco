@@ -14,7 +14,7 @@ Flags:
 		You can use shoh instead of shoco -h
 		If no argument provided this will display current help message.
 		If argument is provided it will display help information
-			about the tha ALIAS or the available aliases for COMMAND.
+			about the ALIAS or the available aliases for COMMAND.
 
 			Aliases for the following commands are available
 
