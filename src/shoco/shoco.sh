@@ -36,7 +36,7 @@ shoco () (
 
         if [ 0 -eq "$?" ]; then 
             if [[ $LATEST_VERSION != $VERSION ]]; then
-                VERSION_LINE+="\nNew version ${LATEST_VERSION} is available. Use shoco -u to update."
+                VERSION_LINE+="\n! New version ${LATEST_VERSION} is available. Use shoco -u to update. !"
             else
                 VERSION_LINE+="\nYou are running the latest version of Shoco."
             fi
@@ -44,7 +44,7 @@ shoco () (
             VERSION_LINE+="\n[Cannot retreive update information. Try again later.]"
         fi
 
-		printf "Short Command (Shoco)
+		printf "Shoco (Short Command)
 
 $VERSION_LINE
 
