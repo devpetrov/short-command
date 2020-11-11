@@ -5,6 +5,7 @@ Usage: 	shoco FLAG
 Flags:
 
 	-a	Display information about Shoco
+		This will check for available updates
 
 	-v	Display only version number
 
