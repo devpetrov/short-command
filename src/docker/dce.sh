@@ -3,3 +3,5 @@ if [ -z $_SHOCO_IS_WINPTY ]; then
 else
     alias dce='winpty docker-compose exec'
 fi
+
+_shoco_docker_completion_wrapper _docker_compose_exec dce
