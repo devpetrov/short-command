@@ -1,3 +1,3 @@
-Hard reset all changes and remove untrecked files.
+Hard reset all changes and remove untracked files.
 
 gsweep is alias for git reset --hard --quiet && git clean -f -d --quiet

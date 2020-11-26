@@ -36,9 +36,9 @@ Available aliases for git are:
 				Alias of git commit -a
 		gcam		Create commit with all changed files. Enter message inline.
 				Alias if git commit -a -m
-		gcand		Quckly add staged changes to the last comit
+		gcand		Quickly add staged changes to the last commit
 				without editing the commit message.
-		gcd		Ammend commit. Alias of git commit --ammend
+		gcd		Amend commit. Alias of git commit --amend
 		gcm		Create commit with staged changes and enter inline message.
 				Alias of git commit -m
 		
@@ -66,7 +66,7 @@ Available aliases for git are:
 	Reset
 		ge		Alias for git reset
 		geh		Reset commits. Alias of git reset HEAD~1
-				Usefull for continuing work from WIP commit.
+				Useful for continuing work from WIP commit.
 
 	Stash:
 		gh		Show list of stashes. Alias if git stash list
@@ -82,4 +82,4 @@ Available aliases for git are:
 		gt		Alias for git Status
 	
 	Other actions:
-		gsweep		Hard reset all changes and remove untrecked files.
+		gsweep		Hard reset all changes and remove untracked files.

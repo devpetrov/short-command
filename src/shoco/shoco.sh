@@ -41,7 +41,7 @@ shoco () (
                 VERSION_LINE+="\nYou are running the latest version of Shoco."
             fi
         else
-            VERSION_LINE+="\n[Cannot retreive update information. Try again later.]"
+            VERSION_LINE+="\n[Cannot retrieve update information. Try again later.]"
         fi
 
 		printf "Shoco (Short Command)
