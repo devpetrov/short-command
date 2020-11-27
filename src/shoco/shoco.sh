@@ -118,7 +118,7 @@ Source code available at: https://github.com/chaos-drone/short-command"
 	}
 
     _shoco_help() {
-        ABOUT="${1:-shoco}"
+        ABOUT=$(echo "${1:-shoco}" | tr "~" "_")
 
         DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
         HELP_ITEM="$DIR/helps/$ABOUT"
