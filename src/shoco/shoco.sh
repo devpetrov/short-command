@@ -1,4 +1,4 @@
-shoco () (
+shoco () {
 
     local VERSION='0.24.0'
 
@@ -107,7 +107,7 @@ Source code available at: https://github.com/chaos-drone/short-command"
 
         rm -f $DOWNLOAD_PATH
 
-        source "$INSTALLATION_PATH/source_shoco.sh"
+        . "$INSTALLATION_PATH/source_shoco.sh"
 
         if [ 0 -lt "$?" ]; then
             echo "Error: Failed to load latest version in current shell."
@@ -150,4 +150,4 @@ Source code available at: https://github.com/chaos-drone/short-command"
     else
         _shoco_help "$2"
     fi
-)
+}
