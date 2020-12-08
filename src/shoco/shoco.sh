@@ -1,6 +1,6 @@
 shoco () {
 
-    local VERSION='0.24.0'
+    local VERSION='0.25.0'
 
     local LATEST_VERSION_DATA='';
 
