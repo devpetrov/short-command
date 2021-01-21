@@ -8,4 +8,4 @@ Check the web site for full list for features: https://getshoco.org
 See https://getshoco.org for installation and usage guides.
 
 # Contribute
-See [CONTRIBUTION_GUIDE.md](https://github.com/chaos-drone/short-command/blob/master/CONTRIBUTION_GUIDE.md)
+See [CONTRIBUTION_GUIDE.md](https://github.com/devpetrov/short-command/blob/master/CONTRIBUTION_GUIDE.md)

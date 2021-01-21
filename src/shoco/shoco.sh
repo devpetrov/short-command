@@ -53,7 +53,7 @@ Released under MIT License. Type shoco -h license for more information.
 
 Author: Pavel Petrov (https://pavelpetrov.space)
 
-Source code available at: https://github.com/chaos-drone/short-command"
+Source code available at: https://github.com/devpetrov/short-command"
 	}
 
 	_shoco_update() {
