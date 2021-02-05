@@ -75,8 +75,8 @@ Available aliases for git are:
 		gho		Pop stash. Alias for git stash pop
 		ghu		Push stash. Alias for git stash push
 		ghum		Push stash with message. Alias for git stash push -m
-		ghuu		Push stash including untracked files. Alias fir git stash push -u
-		ghuum		Push stash with message including untracked files. Alias fir git stash push -u -m
+		ghuu		Push stash including untracked files. Alias for git stash push -u
+		ghuum		Push stash with message including untracked files. Alias for git stash push -u -m
 
 	Status:
 		gt		Alias for git Status
