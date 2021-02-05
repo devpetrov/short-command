@@ -1,3 +1,9 @@
-Show stash list
+Shorthand for 'git stash <command>'
 
-gh is alias of git stash list
+gh requires at least one parameter for command or argument.
+
+Example:
+
+$ gh clear
+
+$ gh create "My message"

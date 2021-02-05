@@ -69,9 +69,10 @@ Available aliases for git are:
 				Useful for continuing work from WIP commit.
 
 	Stash:
-		gh		Show list of stashes. Alias if git stash list
+		gh		Shorthand for 'git stash <command>'
 		gha		Apply a stash. Alias of git stash apply            
 		ghd		Drop stash. Alias for git stash drop
+		ghl		Show list of stashes. Alias if git stash list
 		gho		Pop stash. Alias for git stash pop
 		ghu		Push stash. Alias for git stash push
 		ghum		Push stash with message. Alias for git stash push -m
