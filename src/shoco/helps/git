@@ -65,7 +65,7 @@ Available aliases for git are:
 
 	Reset
 		ge		Alias for git reset
-		geh		Reset commits. Alias of git reset HEAD~1
+		ge~		Reset commits. Alias of git reset HEAD~1
 				Useful for continuing work from WIP commit.
 
 	Stash:
