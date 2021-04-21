@@ -69,3 +69,5 @@ gdebranch ()
         printf "\nDone.\n"
     fi
 }
+
+# --register-name gdebranch

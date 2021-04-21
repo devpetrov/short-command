@@ -3,3 +3,5 @@ if [ -z $_SHOCO_IS_WINPTY ]; then
 else
     alias d='winpty docker'
 fi
+
+# --register-name d

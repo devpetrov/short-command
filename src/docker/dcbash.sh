@@ -11,3 +11,5 @@ else
 fi
 
 _shoco_docker_completion_wrapper _docker_compose_exec dcbash
+
+# --register-name dcbash
