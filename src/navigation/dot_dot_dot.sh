@@ -1,0 +1,3 @@
+alias ...="cd ../.."
+
+# --register-name ...

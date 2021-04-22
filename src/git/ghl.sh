@@ -1,1 +1,3 @@
-alias gh='git stash list'
+alias ghl='git stash list'
+
+# --register-name ghl
