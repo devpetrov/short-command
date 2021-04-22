@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#todo: add variable not to load shoco with 001 precedence over compl. wrapper
+
 #
 #  Installator for Shoco (Short Command)
 #  Copyright (C) 2020  Pavel Petrov
