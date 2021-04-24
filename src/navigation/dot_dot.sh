@@ -1,3 +1,3 @@
 alias ..="cd .."
 
-# --register-name ..gcva
+# --register-name ..
