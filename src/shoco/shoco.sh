@@ -87,12 +87,9 @@ Source code available at: https://github.com/devpetrov/short-command"
             return 1
         fi
 
-        if [ -f "/opt/shoco/source_shoco.sh" ]; then
-            local INSTALLATION_PATH="/opt/shoco"
-        elif [ -f "/c/shoco/source_shoco.sh" ]; then
-            local INSTALLATION_PATH="/c/shoco"
-        else
-            echo "Error: Cannot locate installation path."
+        if [ -z "$SHOCO_INSTALLATION_DIR" ]; then
+            echo "Error: Cannot locate installation path. You can set the installation path by running:"
+            echo "export SHOCO_INSTALLATION_DIR=/path/to/where/source_shoco.sh/is/located"
             return 1
         fi
 
@@ -103,20 +100,29 @@ Source code available at: https://github.com/devpetrov/short-command"
 
         if [ 0 -ne "$?" ]; then
             echo "Error: Installation file is corrupted."
-            rm $DOWNLOAD_PATH
+            rm "$DOWNLOAD_PATH"
             return 1
         fi
 
-        tar -x -f $DOWNLOAD_PATH -C $INSTALLATION_PATH
+        local LATEST_VERSION_DIR="$SHOCO_INSTALLATION_DIR/$LATEST_VERSION"
+
+        tar -x -f "$DOWNLOAD_PATH" -C "$LATEST_VERSION_DIR"
 
         if [ 0 -lt "$?" ]; then
             echo "Error: Failed to extract latest version from the downloaded file."
             return 1
         fi
 
-        rm -f $DOWNLOAD_PATH
+        rm -f "$DOWNLOAD_PATH"
 
-        . "$INSTALLATION_PATH/source_shoco.sh"
+        local SOURCE_FILE_PATH="$SHOCO_INSTALLATION_DIR/source_shoco.sh"
+
+        cat << SOURCEFILE > "$SOURCE_FILE_PATH"
+export SHOCO_INSTALLATION_DIR="$SHOCO_INSTALLATION_DIR"
+. $LATEST_VERSION_DIR/shoco.sh
+SOURCEFILE
+
+        . "$SOURCE_FILE_PATH"
 
         if [ 0 -lt "$?" ]; then
             echo "Error: Failed to load latest version in current shell."

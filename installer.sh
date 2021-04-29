@@ -100,6 +100,23 @@ shoco_install ()
         _shoco_install_error 103  "$DOWNLOAD_PATH" "$INSTALLATION_DIR"; return $?
     fi
 
+    # Create explicit file that sources Shoco and provides environment variable
+    # keeping installation path for versions.
+    local SOURCE_FILE_PATH="$INSTALLATION_DIR/source_shoco.sh"
+
+    if [ ! -f "$SOURCE_FILE_PATH" ]; then
+        touch "$SOURCE_FILE_PATH"
+
+        if [ 0 -ne "$?" ]; then
+            _shoco_install_error 104 "$DOWNLOAD_PATH" "$INSTALLATION_DIR"; return $?
+        fi
+    fi
+
+    cat << SOURCEFILE > "$SOURCE_FILE_PATH"
+export SHOCO_INSTALLATION_DIR="$INSTALLATION_DIR"
+. $INSTALLATION_DIR/$LATEST_VERSION/shoco.sh
+SOURCEFILE
+
     # Files are extracted. Remove downloaded file it is not needed anymore.
     printf "Deleting temporary files...\n"
     rm $DOWNLOAD_PATH
@@ -112,7 +129,7 @@ shoco_install ()
 
     # Files are downloaded and placed in the installation directory.
     # Add sourcing line to ~/.bashrc file to enable Shoco for shell sessions.
-    local SHELL_SOURCE_LINE=". $INSTALLATION_DIR/source_shoco.sh"
+    local SHELL_SOURCE_LINE=". $SOURCE_FILE_PATH"
 
     local BASHRC_FILE="$HOME/.bashrc"
 
@@ -177,6 +194,7 @@ _shoco_install_error ()
         101) echo "Error: failed to download Shoco.";;
         102) echo "Error: failed to create installation directory.";;
         103) echo "Error: failed to decompress installation files.";;
+        104) echo "Error: failed to create sourcing file.";;
     esac
 
     # Handle errors. Error codes up to 99 are not handled.
