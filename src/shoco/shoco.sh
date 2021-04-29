@@ -68,8 +68,17 @@ Source code available at: https://github.com/devpetrov/short-command"
 
         echo "New version ${LATEST_VERSION} is available. Processing.."
 
+        # Determinate writeable download directory.
+        local DOWNLOAD_DIR="${TMPDIR:-/tmp}"
+
+        while [ ! -w "$DOWNLOAD_DIR" ]; do
+            printf "\nDirectory $DOWNLOAD_DIR is not writeable or does not exists.\n"
+            printf "Please, provide writable directory to download temporary files: "
+            read DOWNLOAD_DIR
+        done
+
         local DOWNLOAD_URL=$(_shoco_parse_version -u)
-        local DOWNLOAD_PATH="$TMPDIR/$(basename -- $DOWNLOAD_URL)"
+        local DOWNLOAD_PATH="$DOWNLOAD_DIR/$(basename -- $DOWNLOAD_URL)"
 
         curl -s -H 'Cache-Control: no-cache' $DOWNLOAD_URL --output $DOWNLOAD_PATH
 
