@@ -1,6 +1,6 @@
 shoco () {
 
-    local VERSION='0.25.1'
+    local VERSION='___VERSION___'
 
     local LATEST_VERSION_DATA='';
 
@@ -61,10 +61,10 @@ Source code available at: https://github.com/devpetrov/short-command"
 
         local LATEST_VERSION=$(_shoco_parse_version -v)
 
-        if [[ $LATEST_VERSION = $VERSION ]]; then
-            echo "You already have the latest version $LATEST_VERSION."
-            return 0
-        fi
+        # if [[ $LATEST_VERSION = $VERSION ]]; then
+        #     echo "You already have the latest version $LATEST_VERSION."
+        #     return 0
+        # fi
 
         echo "New version ${LATEST_VERSION} is available. Processing.."
 
@@ -106,7 +106,7 @@ Source code available at: https://github.com/devpetrov/short-command"
 
         local LATEST_VERSION_DIR="$SHOCO_INSTALLATION_DIR/$LATEST_VERSION"
 
-        tar -x -f "$DOWNLOAD_PATH" -C "$LATEST_VERSION_DIR"
+        tar -x -f "$DOWNLOAD_PATH" -C "$SHOCO_INSTALLATION_DIR"
 
         if [ 0 -lt "$?" ]; then
             echo "Error: Failed to extract latest version from the downloaded file."
